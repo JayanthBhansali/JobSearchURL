@@ -4,7 +4,7 @@ import asyncio
 import json
 import nest_asyncio
 from playwright.async_api import async_playwright
-
+from remove_duplicate_jobs import remove_duplicate_jobs
 nest_asyncio.apply()
 
 async def scrape_jobright_ai(keywords=["data science intern", "machine learning"], max_jobs=20):
@@ -92,6 +92,9 @@ async def main():
         json.dump(scraped, f, indent=2)
 
     print(f"\n✅ Scraped {len(scraped)} jobs and saved to jobright_jobs.json")
+    remove_duplicate_jobs("jobright_jobs.json")
+    print("✅ Removed duplicates from jobright_jobs.json")
+    print("✅ Finished scraping and cleaning job data.")
 
 if __name__ == "__main__":
     asyncio.run(main())
