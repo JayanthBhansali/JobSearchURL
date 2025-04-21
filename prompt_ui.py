@@ -1,8 +1,13 @@
 import streamlit as st
 import json
 from generate_cover_letter import generate_cover_letter
-st.header('Cover Letter Generator')
 
+
+import sys
+print("🔍 Running Python from:", sys.executable)
+
+
+st.header('Cover Letter Generator')
 
 with open("jobright_jobs.json", "r") as f:
     jobs = json.load(f)
@@ -16,9 +21,7 @@ job_keyword = st.text_input("Keyword:", [job['keyword'] for job in jobs if job['
 
 st.subheader("Generate Cover Letter")
 
-job_description = st.text_input("Job Description", f"Paste the job description of {job_title} here...")
-
-cover_letter = st.text_area("Generated Cover Letter", "Your cover letter will appear here...")
+job_description = st.text_area("Job Description", f"Paste the job description of {job_title} here...")
 
 if st.button("Generate Cover Letter"):
     # Here you would call your LLM function to generate the cover letter

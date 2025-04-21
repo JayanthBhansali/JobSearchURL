@@ -14,4 +14,7 @@ numpy
 scikit-learn
 
 # Read PDF
-fitz  # PyMuPDF
+pymupdf
+
+# streamlit
+streamlit

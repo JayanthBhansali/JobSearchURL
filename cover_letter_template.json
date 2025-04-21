@@ -1,0 +1,17 @@
+{
+    "name": null,
+    "input_variables": [
+        "description",
+        "job_title_company",
+        "resume_text"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "### Instruction:\nUsing my resume below, write a precise and professional 3-paragraph cover letter tailored for the given job.\nThe cover letter should be concise, engaging, and highlight my skills and experiences relevant to the job description.\n\n### Resume:\n{resume_text}\n\n### Job Title - Company:\n{job_title_company}\n\n### Job Description:\n{description}\n",
+    "template_format": "f-string",
+    "validate_template": true,
+    "_type": "prompt"
+}
